@@ -1,7 +1,9 @@
 package vonzeeple.acorns;
 
-@net.minecraftforge.common.config.Config(modid=Acorns.MODID)
-public class Config {
+import net.minecraftforge.common.config.Config;
+
+@Config(modid=Acorns.MODID)
+public class Configuration {
     public static boolean disableApples = true;
 
     public static int AcornDropChance = 5;
