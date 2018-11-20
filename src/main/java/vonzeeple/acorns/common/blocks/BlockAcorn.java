@@ -40,6 +40,14 @@ public class BlockAcorn extends BlockSapling {
 
     }
 
+    /**
+     * Get the OffsetType for this Block. Determines if the model is rendered slightly offset.
+     */
+    public Block.EnumOffsetType getOffsetType()
+    {
+        return Block.EnumOffsetType.XZ;
+    }
+
     @Override
     public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player)
     {
@@ -51,7 +59,7 @@ public class BlockAcorn extends BlockSapling {
     @Override
     public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos)
     {
-        return ACORN_AABB;
+        return ACORN_AABB.offset(state.getOffset(source, pos));
     }
 
     @Override
