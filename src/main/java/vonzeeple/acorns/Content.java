@@ -1,5 +1,6 @@
 package vonzeeple.acorns;
 
+import com.sun.istack.internal.NotNull;
 import net.minecraft.block.SoundType;
 import net.minecraft.init.SoundEvents;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -16,5 +17,5 @@ public class Content {
     @GameRegistry.ObjectHolder(Acorns.MODID+":"+"block_acorn")//format modid:name
     public static final BlockAcorn blockAcorns = null;
 
-    public static SoundType blockAcornSound=new SoundType(0.5F, 1.0F, SoundEvents.ENTITY_ITEM_PICKUP, SoundEvents.BLOCK_WOOD_STEP, SoundEvents.ENTITY_ITEM_PICKUP, SoundEvents.ENTITY_ITEM_PICKUP, SoundEvents.BLOCK_WOOD_FALL);
+    public static SoundType blockAcornSound=new SoundType(0.2F, 2.0F, SoundEvents.ENTITY_ITEM_PICKUP, SoundEvents.BLOCK_WOOD_STEP, SoundEvents.ENTITY_ITEM_PICKUP, SoundEvents.ENTITY_ITEM_PICKUP, SoundEvents.BLOCK_WOOD_FALL);
 }

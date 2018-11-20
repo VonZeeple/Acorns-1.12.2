@@ -1,7 +1,6 @@
 package vonzeeple.acorns.common.blocks;
 
 import net.minecraft.block.*;
-
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
@@ -34,10 +33,9 @@ public class BlockAcorn extends BlockSapling {
 
     public BlockAcorn() {
         super();
-        this.setDefaultState(this.blockState.getBaseState().withProperty(STAGE, Integer.valueOf(0)).withProperty(TYPE,BlockPlanks.EnumType.OAK));
+        this.setDefaultState(this.blockState.getBaseState().withProperty(STAGE, 0).withProperty(TYPE,BlockPlanks.EnumType.OAK));
         this.setUnlocalizedName("block_acorn");
         this.setRegistryName("acorns:block_acorn");
-        //this.setSoundType(Content.blockAcornSound);
         this.setSoundType(Content.blockAcornSound);
 
     }
@@ -46,10 +44,10 @@ public class BlockAcorn extends BlockSapling {
     public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player)
     {
         return new ItemStack(Content.itemAcorns,1);
-        //return getItem(world, pos, state);
     }
     @Override
     public Item getItemDropped(IBlockState state, Random rand, int fortune){return Content.itemAcorns;}
+
     @Override
     public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos)
     {
