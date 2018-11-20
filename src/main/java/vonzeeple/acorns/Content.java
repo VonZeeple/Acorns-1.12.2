@@ -1,13 +1,11 @@
 package vonzeeple.acorns;
 
-import com.sun.istack.internal.NotNull;
+
 import net.minecraft.block.SoundType;
 import net.minecraft.init.SoundEvents;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import vonzeeple.acorns.common.blocks.BlockAcorn;
 import vonzeeple.acorns.common.items.ItemAcorns;
-
-import java.util.Random;
 
 
 public class Content {

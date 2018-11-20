@@ -1,1 +1,1 @@
--Planted acorn gives an oak sapling after a given time
+-Add acorns to oredicts
