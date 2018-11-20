@@ -65,7 +65,7 @@ public class BlockAcorn extends BlockSapling {
     @Override
     protected BlockStateContainer createBlockState()
     {
-        return new BlockStateContainer(this, new IProperty[] {TYPE, STAGE});
+        return new BlockStateContainer(this, TYPE, STAGE);
     }
     @Override
     public boolean canGrow(World worldIn, BlockPos pos, IBlockState state, boolean isClient) {
@@ -80,12 +80,12 @@ public class BlockAcorn extends BlockSapling {
     @Override
     public void getSubBlocks(CreativeTabs itemIn, NonNullList<ItemStack> items)
     {
-        return;
+
     }
     @Override
     public void grow(World worldIn, BlockPos pos, IBlockState state, Random rand)
     {
-        if ((Integer) state.getValue(STAGE) == 0)
+        if (state.getValue(STAGE) == 0)
         {
             worldIn.setBlockState(pos, state.cycleProperty(STAGE), 4);
         }
@@ -95,7 +95,7 @@ public class BlockAcorn extends BlockSapling {
         }
     }
 
-    public void generateSapling(World worldIn, BlockPos pos, IBlockState state){
+    private void generateSapling(World worldIn, BlockPos pos, IBlockState state){
         IBlockState sapling = Blocks.SAPLING.getDefaultState().withProperty(TYPE,BlockPlanks.EnumType.OAK);
         worldIn.setBlockState(pos,sapling,4);
     }
