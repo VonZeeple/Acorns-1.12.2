@@ -1,0 +1,8 @@
+{
+  "forge_marker": 1,
+  "defaults": {"model": "acorns:block_acorn"},
+  "variants": {
+	"normal": [{"model": "acorns:block_acorn"},{"model": "acorns:block_acorn_45"}],
+    "inventory": [{}]
+  }
+}

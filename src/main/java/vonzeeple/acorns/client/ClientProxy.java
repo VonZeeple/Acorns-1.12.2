@@ -37,6 +37,7 @@ public class ClientProxy extends CommonProxy {
     @SubscribeEvent
     public static void registerRenders(ModelRegistryEvent event) {
         ModelLoader.setCustomModelResourceLocation(Content.itemAcorns, 0, new ModelResourceLocation( Content.itemAcorns.getRegistryName(), "inventory"));
+        ModelLoader.setCustomStateMapper(Content.blockAcorns, Content.blockAcorns.getCustomStateMapper());
     }
 
     public void preInit(FMLPreInitializationEvent event) {
