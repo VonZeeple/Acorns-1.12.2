@@ -2,6 +2,8 @@ package vonzeeple.acorns.common.items;
 
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockPlanks;
+import net.minecraft.block.BlockSapling;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
@@ -11,13 +13,11 @@ import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.EnumActionResult;
-import net.minecraft.util.EnumFacing;
-import net.minecraft.util.EnumHand;
-import net.minecraft.util.SoundCategory;
+import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.apache.logging.log4j.core.config.Order;
+import vonzeeple.acorns.Acorns;
 import vonzeeple.acorns.Content;
 
 public class ItemAcorns extends Item {
@@ -29,7 +29,22 @@ public class ItemAcorns extends Item {
         this.setRegistryName("acorns:acorns");
         this.setCreativeTab(CreativeTabs.FOOD);
         this.block=Content.blockAcorns;
+        this.setHasSubtypes(true);
     }
+
+    /**
+     * returns a list of items with the same ID, but different meta (eg: dye returns 16 items)
+     */
+    @Override
+    public void getSubItems(CreativeTabs tab, NonNullList<ItemStack> items)
+    {
+        if (this.isInCreativeTab(tab))
+        {
+            items.add(new ItemStack(this,1,0));
+            items.add(new ItemStack(this,1,5));
+        }
+    }
+
 
     /**
      * Called when a Block is right-clicked with this Item
@@ -48,9 +63,9 @@ public class ItemAcorns extends Item {
 
         if (!itemstack.isEmpty() && player.canPlayerEdit(pos, facing, itemstack) && worldIn.mayPlace(this.block, pos, false, facing, (Entity)null))
         {
-            int i = this.getMetadata(itemstack.getMetadata());
+            int i = this.getMetadata(itemstack);
             IBlockState iblockstate1 = this.block.getStateForPlacement(worldIn, pos, facing, hitX, hitY, hitZ, i, player, hand);
-
+            //IBlockState iblockstate1 =this.block.getDefaultState().withProperty(BlockSapling.TYPE,BlockPlanks.EnumType.byMetadata(i));
             if (placeBlockAt(itemstack, player, worldIn, pos, facing, hitX, hitY, hitZ, iblockstate1))
             {
                 iblockstate1 = worldIn.getBlockState(pos);

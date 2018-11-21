@@ -1,5 +1,6 @@
 package vonzeeple.acorns;
 
+import net.minecraft.block.BlockNewLeaf;
 import net.minecraft.block.BlockOldLeaf;
 import net.minecraft.block.BlockPlanks;
 import net.minecraft.block.BlockSapling;
@@ -28,7 +29,7 @@ public class EventHandler {
     private static Random rand = new Random();
 
     @SubscribeEvent
-    public static void onSaplingDroped(BlockEvent.HarvestDropsEvent event) {
+    public static void onSaplingDropped(BlockEvent.HarvestDropsEvent event) {
         if (event.getState() == Blocks.LEAVES.getDefaultState().withProperty(BlockOldLeaf.VARIANT, BlockPlanks.EnumType.OAK)) {
             for (int i = 0; i < event.getDrops().size(); i++) {
                 ItemStack item=event.getDrops().get(i);
@@ -44,7 +45,27 @@ public class EventHandler {
                 }
             }
             if (rand.nextInt(100) < Configuration.AcornDropChance) {
-                event.getDrops().add(new ItemStack(Content.itemAcorns, 1));
+                event.getDrops().add(new ItemStack(Content.itemAcorns, 1,0));
+
+            }
+
+        }
+        if (event.getState() == Blocks.LEAVES2.getDefaultState().withProperty(BlockNewLeaf.VARIANT, BlockPlanks.EnumType.DARK_OAK)) {
+            for (int i = 0; i < event.getDrops().size(); i++) {
+                ItemStack item=event.getDrops().get(i);
+                if (item.getItem() == Items.APPLE) {
+                    if (Configuration.disableDarkOakApples) {
+                        event.getDrops().remove(i);
+                    }
+                }
+                if(item.getItem()== Item.getItemFromBlock(Blocks.SAPLING)){
+                    if(item.getMetadata()== Blocks.SAPLING.getMetaFromState(Blocks.SAPLING.getDefaultState().withProperty(TYPE,BlockPlanks.EnumType.DARK_OAK))){
+                        if(Configuration.disableDarkOakSaplings){event.getDrops().remove(i);}
+                    }
+                }
+            }
+            if (rand.nextInt(100) < Configuration.DarkAcornDropChance) {
+                event.getDrops().add(new ItemStack(Content.itemAcorns, 1,5));
 
             }
 

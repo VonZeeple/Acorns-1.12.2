@@ -3,6 +3,18 @@
   "defaults": {"model": "acorns:block_acorn"},
   "variants": {
 	"normal": [{"model": "acorns:block_acorn"},{"model": "acorns:block_acorn_45"}],
+    "type":{
+      "oak":{},
+      "birch":{},
+      "jungle":{},
+      "acacia":{},
+      "spruce":{},
+      "dark_oak":{}
+    },
+    "stage":{
+      "0":{},
+      "1":{}
+    },
     "inventory": [{}]
   }
 }
