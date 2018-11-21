@@ -3,7 +3,6 @@ package vonzeeple.acorns;
 import net.minecraft.block.BlockNewLeaf;
 import net.minecraft.block.BlockOldLeaf;
 import net.minecraft.block.BlockPlanks;
-import net.minecraft.block.BlockSapling;
 import net.minecraft.entity.ai.EntityAITempt;
 import net.minecraft.entity.passive.EntityPig;
 import net.minecraft.entity.player.EntityPlayer;
@@ -46,7 +45,6 @@ public class EventHandler {
             }
             if (rand.nextInt(100) < Configuration.AcornDropChance) {
                 event.getDrops().add(new ItemStack(Content.itemAcorns, 1,0));
-
             }
 
         }

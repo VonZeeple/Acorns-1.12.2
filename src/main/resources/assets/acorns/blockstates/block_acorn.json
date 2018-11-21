@@ -4,12 +4,12 @@
   "variants": {
 	"normal": [{"model": "acorns:block_acorn"},{"model": "acorns:block_acorn_45"}],
     "type":{
-      "oak":{},
+      "oak":{"textures": {"all": "acorns:blocks/block_acorn"}},
       "birch":{},
       "jungle":{},
       "acacia":{},
       "spruce":{},
-      "dark_oak":{}
+      "dark_oak":{"textures": {"all": "acorns:blocks/block_acorn_dark"}}
     },
     "stage":{
       "0":{},
