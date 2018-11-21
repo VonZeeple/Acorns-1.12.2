@@ -19,6 +19,7 @@ import net.minecraft.world.World;
 import org.apache.logging.log4j.core.config.Order;
 import vonzeeple.acorns.Acorns;
 import vonzeeple.acorns.Content;
+import vonzeeple.acorns.common.blocks.BlockAcorn;
 
 public class ItemAcorns extends Item {
 
@@ -31,6 +32,18 @@ public class ItemAcorns extends Item {
         this.block=Content.blockAcorns;
         this.setHasSubtypes(true);
     }
+
+
+    /**
+     * Returns the unlocalized name of this item. This version accepts an ItemStack so different stacks can have
+     * different names based on their damage or NBT.
+     */
+    @Override
+    public String getUnlocalizedName(ItemStack stack)
+    {
+        return super.getUnlocalizedName()+"."+(BlockPlanks.EnumType.byMetadata(stack.getMetadata())).getUnlocalizedName();
+    }
+
 
     /**
      * returns a list of items with the same ID, but different meta (eg: dye returns 16 items)
