@@ -6,7 +6,7 @@
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "",
-  "updateUrl": "",
+  "updateUrl": "https://github.com/VonZeeple/Acorns-1.12.2",
   "authorList": ["VonZeeple (@VonZeeple)"],
   "credits": "",
   "logoFile": "",
