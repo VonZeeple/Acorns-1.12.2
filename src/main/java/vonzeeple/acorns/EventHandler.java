@@ -3,6 +3,7 @@ package vonzeeple.acorns;
 import net.minecraft.block.BlockNewLeaf;
 import net.minecraft.block.BlockOldLeaf;
 import net.minecraft.block.BlockPlanks;
+import net.minecraft.entity.ai.EntityAITasks;
 import net.minecraft.entity.ai.EntityAITempt;
 import net.minecraft.entity.passive.EntityPig;
 import net.minecraft.entity.player.EntityPlayer;
@@ -16,6 +17,7 @@ import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import vonzeeple.acorns.common.CustomEntityAITempt;
 
 import java.util.Random;
 
@@ -78,7 +80,13 @@ public class EventHandler {
         }
         if (event.getEntity() instanceof EntityPig) {
             EntityPig pig = (EntityPig) event.getEntity();
-            pig.tasks.addTask(4, new EntityAITempt(pig, 1, Content.itemAcorns, false));
+            for(EntityAITasks.EntityAITaskEntry task : pig.tasks.taskEntries){
+                if(task.action instanceof CustomEntityAITempt){
+                    return;
+                }
+            }
+            pig.tasks.addTask(4, new CustomEntityAITempt(pig, 1, Content.itemAcorns, false));
+
         }
     }
 
