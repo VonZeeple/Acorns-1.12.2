@@ -74,7 +74,7 @@ public class EventHandler {
     //From Quark by Vazkii
     @SubscribeEvent
     public static void onEntityTick(LivingEvent.LivingUpdateEvent event) {
-        if (!Configuration.acornsTemptPigs) {
+        if (!Configuration.acornTemptsPigs) {
             return;
         }
         if (event.getEntity() instanceof EntityPig) {
@@ -91,7 +91,7 @@ public class EventHandler {
 
     @SubscribeEvent
     public static void breed(PlayerInteractEvent.EntityInteract event) {
-        if (!Configuration.acornsBreedPigs) {
+        if (!Configuration.acornBreedsPigs) {
             return;
         }
         if (event.getHand() == EnumHand.MAIN_HAND)

@@ -13,11 +13,12 @@ public class Configuration {
 
     public static boolean disableDarkOakSaplings= false;
 
+    @Config.RangeInt(min = 0, max = 100)
     public static int AcornDropChance = 5;
-
+    @Config.RangeInt(min = 0, max = 100)
     public static int DarkAcornDropChance = 5;
 
-    public static boolean acornsBreedPigs = true;
+    public static boolean acornBreedsPigs = true;
 
-    public static boolean acornsTemptPigs = true;
+    public static boolean acornTemptsPigs = true;
 }
