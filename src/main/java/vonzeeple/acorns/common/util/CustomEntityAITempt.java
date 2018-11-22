@@ -1,4 +1,4 @@
-package vonzeeple.acorns.common;
+package vonzeeple.acorns.common.util;
 
 import net.minecraft.entity.EntityCreature;
 import net.minecraft.entity.ai.EntityAITempt;

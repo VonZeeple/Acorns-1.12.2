@@ -10,7 +10,7 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
-import vonzeeple.acorns.Content;
+import vonzeeple.acorns.common.Content;
 import vonzeeple.acorns.common.CommonProxy;
 
 @Mod.EventBusSubscriber(Side.CLIENT)

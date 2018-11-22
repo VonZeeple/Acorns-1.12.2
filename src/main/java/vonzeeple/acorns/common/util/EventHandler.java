@@ -1,10 +1,9 @@
-package vonzeeple.acorns;
+package vonzeeple.acorns.common.util;
 
 import net.minecraft.block.BlockNewLeaf;
 import net.minecraft.block.BlockOldLeaf;
 import net.minecraft.block.BlockPlanks;
 import net.minecraft.entity.ai.EntityAITasks;
-import net.minecraft.entity.ai.EntityAITempt;
 import net.minecraft.entity.passive.EntityPig;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
@@ -17,7 +16,7 @@ import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import vonzeeple.acorns.common.CustomEntityAITempt;
+import vonzeeple.acorns.common.Content;
 
 import java.util.Random;
 

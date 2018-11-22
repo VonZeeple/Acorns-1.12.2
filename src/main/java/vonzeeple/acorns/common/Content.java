@@ -1,9 +1,10 @@
-package vonzeeple.acorns;
+package vonzeeple.acorns.common;
 
 
 import net.minecraft.block.SoundType;
 import net.minecraft.init.SoundEvents;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import vonzeeple.acorns.Acorns;
 import vonzeeple.acorns.common.blocks.BlockAcorn;
 import vonzeeple.acorns.common.items.ItemAcorns;
 

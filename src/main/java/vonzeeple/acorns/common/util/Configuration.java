@@ -1,6 +1,7 @@
-package vonzeeple.acorns;
+package vonzeeple.acorns.common.util;
 
 import net.minecraftforge.common.config.Config;
+import vonzeeple.acorns.Acorns;
 
 @Config(modid=Acorns.MODID)
 public class Configuration {

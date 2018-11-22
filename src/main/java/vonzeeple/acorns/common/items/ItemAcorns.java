@@ -3,7 +3,6 @@ package vonzeeple.acorns.common.items;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockPlanks;
-import net.minecraft.block.BlockSapling;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
@@ -11,15 +10,11 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import org.apache.logging.log4j.core.config.Order;
-import vonzeeple.acorns.Acorns;
-import vonzeeple.acorns.Content;
-import vonzeeple.acorns.common.blocks.BlockAcorn;
+import vonzeeple.acorns.common.Content;
 
 public class ItemAcorns extends Item {
 
