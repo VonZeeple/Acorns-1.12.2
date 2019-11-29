@@ -1,6 +1,5 @@
 package vonzeeple.acorns;
 
-import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -19,17 +18,11 @@ public class Acorns
 
     public static Logger logger;
 
-    // On instancie la classe du mod
     @Mod.Instance
     public static Acorns instance = new Acorns();
 
     @SidedProxy(clientSide = "vonzeeple.acorns.client.ClientProxy", serverSide = "vonzeeple.acorns.common.CommonProxy")
     public static CommonProxy proxy;
-
-    //Static initializer
-    static {
-        FluidRegistry.enableUniversalBucket(); // Must be called before preInit
-    }
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event)

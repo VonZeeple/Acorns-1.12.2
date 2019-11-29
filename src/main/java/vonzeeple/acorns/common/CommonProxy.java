@@ -42,7 +42,7 @@ public class CommonProxy {
 
 
     private void registerOres(){
-        //OreDictionary.registerOre("listAllsugar",Items.SUGAR);
+        OreDictionary.registerOre("listAllseed",Content.itemAcorns);
     }
 
 }

@@ -18,7 +18,7 @@ import vonzeeple.acorns.common.Content;
 
 public class ItemAcorns extends Item {
 
-    Block block;
+    private Block block;
     public ItemAcorns(){
         super();
         this.setUnlocalizedName("acorns");
@@ -73,7 +73,7 @@ public class ItemAcorns extends Item {
         {
             int i = this.getMetadata(itemstack);
             IBlockState iblockstate1 = this.block.getStateForPlacement(worldIn, pos, facing, hitX, hitY, hitZ, i, player, hand);
-            //IBlockState iblockstate1 =this.block.getDefaultState().withProperty(BlockSapling.TYPE,BlockPlanks.EnumType.byMetadata(i));
+
             if (placeBlockAt(itemstack, player, worldIn, pos, facing, hitX, hitY, hitZ, iblockstate1))
             {
                 iblockstate1 = worldIn.getBlockState(pos);
